@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Reto_Propietaria_2.Usuarios>
+
+@{
+    ViewBag.Title = "Read";
+}
+
+<h2>Read</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EdadUser)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorreoUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EdadUser)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_user }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_user }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_user })
+        </td>
+    </tr>
+}
+
+</table>
